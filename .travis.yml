@@ -1,0 +1,16 @@
+#配置文件
+language: node.js
+node_js:
+    - '10'
+#travis-ci caching
+cache:
+  directories:
+    - node_modules
+# s: build lifecycle
+install:
+  - npm install
+# 脚本
+script:
+  - npm run test:unit
+after_success:
+  - npm run coverage
